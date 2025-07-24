@@ -7,6 +7,11 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
+     if (!name || !email || !message) {
+    alert("Please fill out all fields.");
+    return;
+  }
+
     fetch("https://script.google.com/macros/s/AKfycbzV9PBAvdtnHu80gJI9ix3EWtSMQ73pWekGe5uEjFqoaJz2wwkB3uPLdRFMLZ_qf9GCYg/exec", {
       method: "POST",
       headers: { 
