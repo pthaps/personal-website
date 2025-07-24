@@ -1,12 +1,153 @@
 <!DOCTYPE html>
-                                <html lang="en">
-                                    <head>
-                                        <meta charset="UTF-8">
-                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                        <title>My Personal Website</title>
-                                    </head>
-                                    <body>
-                                        <h1>Welcome to My Personal Website!</h1>
-                                    </body>
-                                </html>
-                            
+
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content ="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Portfolio</title>
+    
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav>
+        <div class="left">
+            <a href="/">Prince Thapa</a>
+        </div>
+
+
+        <div class="right">
+            <a href="https://github.com/pthaps" target="_blank" rel="noopener
+            noreferrer">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+        </a>
+
+
+        <a href="https://www.linkedin.com/in/prince-thapa-0578a0297/" target="_blank" rel="noopener
+            noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+
+        <a href="mailto:thapapri000@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+        </a>
+        </div>
+    </nav>
+    <main>
+        <!--Section 1: Hero-->
+        <section class="hero-section">
+            <div class="text">
+                <h2>Hi, I'm Prince 👋</h2>
+                <p>I'm Prince Thapa, a tech-driven problem solver and Computer Science student at Johnson & Wales University, passionate about creating smart, real-world solutions through code, data, and secure systems. My background in IT, digital operations, and communication has shaped my passion for building useful solutions, whether through software development, data analysis, or creative problem-solving. I’m working toward a career in tech, with goals of becoming a software engineer or data analyst, while continuing to expand my knowledge in areas like cybersecurity. I’m always eager to learn, grow, and make a difference both locally and globally.</p>
+            
+            <div class="links">
+                <a href="#skills">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Skills</span>
+                </a>
+
+                <a href="#portfolio">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Portfolio</span>
+                </a>
+
+                <a href="#contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+
+
+            </div>
+            </div>
+
+
+            <div class="headshot"></div>
+
+        </section>
+
+        <!--Section 2: Skills-->
+        <section id="skills" class="skills-section">
+            <h2>Skills</h2>
+            <div class="text">I have experience with programming languages such as Java, Python, HTML, and CSS, and I'm comfortable working with tools like Git, MySQL, Linux, and Visual Studio Code. I have a solid understanding of networking concepts, including working with Cisco routers, and I’m continuing to build my knowledge in cybersecurity practices. My data skills include SQL, data analysis, and using tools like Microsoft Excel. Alongside technical skills, I bring strong communication, teamwork, and problem-solving abilities to every project I work on.</div>
+
+            <div class="cells">
+
+                <div class="cell">
+                    <img src="images/html-logo.webp" alt="html-logo">
+                    <span>HTML</span>
+                </div>
+        
+       
+                <div class="cell">
+                    <img src="images/javascript-logo.webp" alt="javascript-logo">
+                    <span>Javascript</span>
+                </div>
+
+                       
+                <div class="cell">
+                    <img src="images/node-logo.webp" alt="node-logo">
+                    <span>Node</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/css-logo.webp" alt="css-logo">
+                    <span>CSS</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/react-logo.webp" alt="react-logo">
+                    <span>React</span>
+                </div>
+            </div>
+        </section>
+
+    
+
+        <!--Section 3: Portfolio-->
+        <section id="portfolio" class = "portfolio-section">
+            <h2>Portfolio</h2>
+        </section>
+
+        <!--Section 4: Contact-->
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+
+            <div class="group">
+                <div class="text">
+                I’m always open to new opportunities, collaborations, or simply connecting with like-minded individuals. If you'd like to get in touch, feel free to reach out to me via email or through my social media profiles. Whether it’s about a project, career opportunity, or just to say hello, I’d love to hear from you.
+                Let me know if you'd like me to add your email, LinkedIn, or other contact info directly into this section
+                </div>
+
+                <form id="contactForm">
+
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name ="message"cols="30" rows="10" required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
