@@ -1,33 +1,20 @@
 document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const form = this;
+    const form = e.target;
+    const formData = new FormData(form);
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-     if (!name || !email || !message) {
-    alert("Please fill out all fields.");
-    return;
-  }
-
-    fetch("https://script.google.com/macros/s/AKfycbzV9PBAvdtnHu80gJI9ix3EWtSMQ73pWekGe5uEjFqoaJz2wwkB3uPLdRFMLZ_qf9GCYg/exec", {
-      method: "POST",
-      headers: { 
-        "Content-Type": "application/json" 
-    },
-      body: JSON.stringify({ name, email, message }),
-    })
-    .then(() => {
-
-  alert("Message sent! Thanks for reaching out :3");
-  form.reset();
-})
-.catch(error => {
-  console.error("Error:", error);
-  alert("Error sending message. Please try again later.");
-  });
-
+    fetch(form.action, {
+        method: "POST",
+        body: formData
+    }).then(response => {
+        if (response.ok) {
+            form.reset();
+            document.getElementById("thankYouPopup").style.display = "block";
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    }).catch(() => {
+        alert("There was an error submitting the form.");
+    });
 });
-
