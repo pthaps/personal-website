@@ -1,20 +1,22 @@
-document.getElementById("contactForm").addEventListener("submit", function(e) {
+document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
+    const formData = new FormData(this);
 
-    fetch(form.action, {
+    fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
-    }).then(response => {
+    })
+    .then(response => {
         if (response.ok) {
-            form.reset();
+            // Show the thank you popup
             document.getElementById("thankYouPopup").style.display = "block";
+            this.reset(); // optional: clear form
         } else {
             alert("Something went wrong. Please try again.");
         }
-    }).catch(() => {
-        alert("There was an error submitting the form.");
+    })
+    .catch(error => {
+        alert("An error occurred: " + error.message);
     });
 });
