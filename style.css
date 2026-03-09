@@ -3,7 +3,6 @@
   --link-color: #4a76ee;
   --background-color: #eeeff1;
 
-  /* spacing scale (for even spacing) */
   --container-padding: 50px;
   --section-gap: 100px;
   --section-gap-mobile: 70px;
@@ -40,7 +39,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 var(--container-padding);
   height: 80px;
 }
@@ -64,23 +62,21 @@ nav .right a:last-child {
 }
 
 nav .right a span {
-  /* FIXED TYPO: margin--left -> margin-left */
   margin-left: 5px;
 }
 
 /* CONSISTENT SECTION SPACING */
 .hero-section,
 .skills-section,
+.certifications-section,
 .portfolio-section,
 .contact-section {
   padding: 0 var(--container-padding);
   margin-bottom: var(--section-gap);
 }
 
-/* Give hero top breathing room without breaking even bottom spacing */
 .hero-section {
   margin-top: 50px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,13 +116,13 @@ nav .right a span {
 }
 
 .hero-section .headshot {
-  /* Optional: if you add a headshot later, this keeps layout stable */
   flex: 2;
   min-height: 220px;
 }
 
-/* SECTION TITLES (consistent) */
+/* SECTION TITLES */
 .skills-section h2,
+.certifications-section h2,
 .portfolio-section h2,
 .contact-section h2 {
   text-align: center;
@@ -134,7 +130,7 @@ nav .right a span {
   margin-bottom: var(--title-gap);
 }
 
-/* SECTION TEXT (consistent spacing) */
+/* SECTION TEXT */
 .skills-section .text,
 .portfolio-section .text {
   text-align: left;
@@ -142,37 +138,160 @@ nav .right a span {
 }
 
 /* SECTION 2: Skills */
-.skills-section .cells {
+.skills-section .skill-groups {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: var(--card-gap);
-}
-
-.skills-section .cells .cell {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
+}
 
-  width: 200px;
-  padding: 10px 20px;
+.skills-section .skill-group {
+  background-color: #fff;
   border: 1.5px solid #d3d3d3;
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 20px 24px;
+  flex: 1;
+  min-width: 220px;
+  max-width: 280px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.skills-section .cells .cell img {
-  width: 30px;
-  height: 30px;
+.skills-section .skill-group:hover {
+  border-color: var(--link-color);
+  box-shadow: 0 4px 16px rgba(74, 118, 238, 0.1);
+}
+
+.skills-section .skill-group h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--link-color);
+}
+
+.skills-section .skill-group h3 i {
+  margin-right: 6px;
+}
+
+.skills-section .skill-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-section .skill-group ul li {
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 3px 0;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.skills-section .skill-group ul li:last-child {
+  border-bottom: none;
+}
+
+/* SECTION 3: Certifications */
+.certifications-section .cert-cards {
+  display: flex;
+  gap: var(--card-gap);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.certifications-section .cert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #fff;
+  border: 1.5px solid #d3d3d3;
+  border-radius: 8px;
+  padding: 24px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.certifications-section .cert-card:hover {
+  border-color: var(--link-color);
+  box-shadow: 0 4px 16px rgba(74, 118, 238, 0.1);
+}
+
+.certifications-section .cert-icon {
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2px;
+  overflow: hidden;
+}
+
+.certifications-section .cert-badge-img {
+  width: 80px;
+  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
   object-fit: contain;
-  border-radius: 2px;
+  display: block;
 }
 
-.skills-section .cells .cell span {
+.certifications-section .cert-info {
+  flex: 1;
+}
+
+.certifications-section .cert-info h3 {
   font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
-/* SECTION 3: Portfolio */
+.certifications-section .cert-info .cert-issuer {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.certifications-section .cert-info .cert-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: #444;
+}
+
+.certifications-section .cert-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.certifications-section .cert-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--link-color);
+  background-color: rgba(74, 118, 238, 0.1);
+  border: 1px solid rgba(74, 118, 238, 0.3);
+  border-radius: 4px;
+  padding: 3px 10px;
+}
+
+.certifications-section .cert-verify {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.certifications-section .cert-verify:hover {
+  opacity: 0.75;
+}
+
+/* SECTION 4: Portfolio */
 .portfolio-section {
   text-align: left;
 }
@@ -199,13 +318,7 @@ nav .right a span {
   line-height: 1.5;
 }
 
-
-.portfolio-section ul li {
-  margin: 8px 0;
-  line-height: 1.5;
-}
-
-/* SECTION 4: Contact */
+/* SECTION 5: Contact */
 .contact-section h2 {
   text-align: center;
 }
@@ -218,7 +331,7 @@ nav .right a span {
 
 .contact-section .group .text {
   flex: 3;
-  margin-top: 0; /* remove uneven top push */
+  margin-top: 0;
   line-height: 1.6;
 }
 
@@ -257,6 +370,15 @@ nav .right a span {
   filter: brightness(0.9);
 }
 
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px var(--container-padding);
+  font-size: 14px;
+  color: #888;
+  border-top: 1px solid #d3d3d3;
+}
+
 /* Responsive */
 @media (max-width: 850px) {
   .hero-section .text h2 {
@@ -276,10 +398,18 @@ nav .right a span {
   .contact-section .group {
     flex-direction: column;
   }
+
+  .certifications-section .cert-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certifications-section .cert-card {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
-  /* Switch to mobile spacing using variables */
   :root {
     --container-padding: 20px;
     --section-gap: var(--section-gap-mobile);
@@ -305,9 +435,5 @@ nav .right a span {
 
   .hero-section .text h2 {
     font-size: 30px;
-  }
-
-  .skills-section .cells .cell span {
-    font-size: 16px;
   }
 }

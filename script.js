@@ -20,3 +20,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
         alert("An error occurred: " + error.message);
     });
 });
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
