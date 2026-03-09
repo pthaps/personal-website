@@ -603,4 +603,23 @@ footer {
     align-items: center;
     gap: 6px;
   }
+
+  /* Contact form full width on mobile */
+  .contact-section .group {
+    flex-direction: column;
+  }
+
+  .contact-section .group .text {
+    width: 100%;
+  }
+
+  .contact-section .group form {
+    width: 100%;
+  }
+
+  .contact-section .group form input,
+  .contact-section .group form textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
