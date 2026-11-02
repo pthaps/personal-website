@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("fonts/RobotoCondensed-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("fonts/RobotoCondensed-Italic-VariableFont_wght.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   --text-color: #1a1c20;
   --link-color: #4a76ee;
@@ -22,7 +38,8 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
   background-color: var(--background-color);
   max-width: 1400px;
   margin: 0 auto;
@@ -65,11 +82,80 @@ nav .right a span {
   margin-left: 5px;
 }
 
+/* Compact floating section menu. */
+.section-menu {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 10;
+}
+
+.section-menu summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-left: auto;
+  list-style: none;
+  cursor: pointer;
+  color: #fff;
+  background: var(--text-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(26, 28, 32, 0.18);
+}
+
+.section-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+nav.section-nav {
+  position: absolute;
+  right: 0;
+  bottom: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  width: 190px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+  height: auto;
+  padding: 10px;
+  background: #fff;
+  border: 1.5px solid #d3d3d3;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(26, 28, 32, 0.12);
+}
+
+.section-nav a {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.section-nav a:hover {
+  color: var(--text-color);
+}
+
+.section-nav a:focus-visible,
+.section-menu summary:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+main section[id] {
+  scroll-margin-top: 24px;
+}
+
 /* CONSISTENT SECTION SPACING */
 .hero-section,
 .skills-section,
 .certifications-section,
 .portfolio-section,
+.blogs-section,
 .contact-section {
   padding: 0 var(--container-padding);
   margin-bottom: var(--section-gap);
@@ -120,10 +206,15 @@ nav .right a span {
   min-height: 220px;
 }
 
+.hero-section .headshot:empty {
+  display: none;
+}
+
 /* SECTION TITLES */
 .skills-section h2,
 .certifications-section h2,
 .portfolio-section h2,
+.blogs-section h2,
 .contact-section h2 {
   text-align: center;
   font-size: 35px;
@@ -132,8 +223,9 @@ nav .right a span {
 
 /* SECTION TEXT */
 .skills-section .text,
-.portfolio-section .text {
-  text-align: left;
+.portfolio-section .text,
+.blogs-section .text {
+  text-align: center;
   margin-bottom: var(--content-gap);
 }
 
@@ -262,6 +354,7 @@ nav .right a span {
 }
 
 .certifications-section .cert-footer {
+  justify-content: center;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -293,22 +386,28 @@ nav .right a span {
 
 /* SECTION 4: Portfolio */
 .portfolio-section {
+  text-align: center;
+}
+
+.portfolio-section .text {
   text-align: left;
 }
 
-.portfolio-section h3 {
+.portfolio-section h3,
+.blogs-section h3 {
   margin-top: 18px;
   margin-bottom: 10px;
   line-height: 1.25;
 }
 
-.portfolio-section p {
+.portfolio-section p,
+.blogs-section p {
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
 .portfolio-section ul {
-  list-style: disc;
+  list-style-position: outside;
   padding-left: 20px;
   margin: 0 0 20px;
 }
@@ -319,6 +418,27 @@ nav .right a span {
 }
 
 /* SECTION 5: Contact */
+.email-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
+  background-color: var(--text-color);
+  color: #fff;
+  font-weight: 600;
+}
+
+.email-button:hover {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.email-button:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 4px;
+}
+
 .contact-section h2 {
   text-align: center;
 }
@@ -348,7 +468,7 @@ nav .right a span {
 
 .contact-section .group form input,
 .contact-section .group form textarea {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   border: 2px solid var(--link-color);
   padding: 10px;
   margin-bottom: 15px;
@@ -357,7 +477,7 @@ nav .right a span {
 
 .contact-section .group form button {
   font-size: 16px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   color: #fff;
   background-color: var(--link-color);
   border: none;
@@ -435,8 +555,9 @@ nav .right a span {
 
 .experience-section .timeline-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 12px;
@@ -457,7 +578,7 @@ nav .right a span {
 .experience-section .timeline-meta {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 4px;
 }
 
@@ -477,8 +598,8 @@ nav .right a span {
 }
 
 .experience-section .timeline-content ul {
-  list-style: disc;
-  padding-left: 18px;
+  list-style-position: inside;
+  padding-left: 0;
   margin: 0;
 }
 
@@ -539,11 +660,11 @@ footer {
 
   .experience-section .timeline-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .experience-section .timeline-meta {
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
