@@ -117,11 +117,9 @@ nav .right a {
 }
 
 nav .right a.resume-button {
-  font-size: 13px;
-  color: var(--background-color);
-  background-color: var(--text-color);
-  padding: 5px 10px;
-  border-radius: 5px;
+  font-size: inherit;
+  color: var(--text-color);
+  background-color: transparent;
 }
 
 .top-nav a:focus-visible {
