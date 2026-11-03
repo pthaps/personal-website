@@ -13,73 +13,64 @@
     <title>Prince Thapa | Cybersecurity Portfolio</title>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!--NAVBAR-->
-    <nav>
+    <nav class="top-nav" aria-label="Main navigation">
         <div class="left">
             <a href="/">Prince Thapa</a>
         </div>
 
         <div class="right">
-            <a href="https://github.com/pthaps" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/pthaps" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
                 <span>GitHub</span>
             </a>
 
-            <a href="https://www.linkedin.com/in/princethapa/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/princethapa/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                 <span>LinkedIn</span>
             </a>
 
-            <a href="mailto:thapapri000@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:thapapri000@gmail.com" aria-label="Email Prince Thapa">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                 <span>Email</span>
+            </a>
+            <a class="resume-button" href="Prince_Thapa_Resume.pdf" download="Prince_Thapa_Resume.pdf">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                <span>Download Resume PDF</span>
             </a>
         </div>
     </nav>
 
-    <details class="section-menu">
-        <summary aria-label="Toggle section menu">
-            <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </summary>
-        <nav class="section-nav" aria-label="Page sections">
-            <a href="#skills">Skills</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#experience">Experience</a>
-            <a href="#blogs">Blogs</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </details>
-
-    <main>
+    <main id="main-content" tabindex="-1">
         <!--Section 1: Hero-->
         <section class="hero-section">
             <div class="text">
-                <h2>Hi, I'm Prince</h2>
+                <h1>Hi, I'm Prince</h1>
                 <p>I'm a cybersecurity undergraduate at Johnson &amp; Wales University in Providence, RI, working toward my B.S. with an expected graduation in 2027. As an IT Security Support Specialist, I investigate security alerts, support PCI DSS compliance, audit account access, and analyze phishing emails. Certified in CompTIA Security+ and ISC2 CC, I bring hands-on experience in endpoint management, Active Directory, and workflow automation &mdash; along with a passion for building useful tools and solving security challenges.</p>
                 <div class="links">
                     <a href="#skills">
-                        <i class="fa-solid fa-code"></i>
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
                         <span>Skills</span>
                     </a>
                     <a href="#certifications">
-                        <i class="fa-solid fa-certificate"></i>
+                        <i class="fa-solid fa-certificate" aria-hidden="true"></i>
                         <span>Certifications</span>
                     </a>
                     <a href="#portfolio">
-                        <i class="fa-solid fa-diagram-project"></i>
+                        <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
                         <span>Portfolio</span>
                     </a>
                     <a href="#experience">
-                        <i class="fa-solid fa-briefcase"></i>
+                        <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
                         <span>Experience</span>
                     </a>
-                    <a href="#blogs">
-                        <i class="fa-solid fa-pen-nib"></i>
-                        <span>Blogs</span>
+                    <a href="#resume">
+                        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                        <span>Resume</span>
                     </a>
                     <a href="#contact">
-                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                         <span>Contact</span>
                     </a>
                 </div>
@@ -93,7 +84,7 @@
             <div class="skill-groups">
 
                 <div class="skill-group">
-                    <h3><i class="fa-solid fa-network-wired"></i> Networking &amp; Infrastructure</h3>
+                    <h3><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Networking &amp; Infrastructure</h3>
                     <ul>
                         <li>TCP/IP, VLANs, subnetting</li>
                         <li>Cisco routers &amp; switches</li>
@@ -103,7 +94,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3><i class="fa-solid fa-shield-halved"></i> Security Tools</h3>
+                    <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Security Tools</h3>
                     <ul>
                         <li>Wireshark (packet analysis)</li>
                         <li>Nmap &amp; Burp Suite</li>
@@ -113,7 +104,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3><i class="fa-solid fa-tower-broadcast"></i> Incident Response / SOC</h3>
+                    <h3><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i> Incident Response / SOC</h3>
                     <ul>
                         <li>AV, XDR &amp; security log monitoring</li>
                         <li>Security alert investigation</li>
@@ -123,7 +114,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3><i class="fa-solid fa-cloud"></i> Platforms &amp; Automation</h3>
+                    <h3><i class="fa-solid fa-cloud" aria-hidden="true"></i> Platforms &amp; Automation</h3>
                     <ul>
                         <li>Power Apps, Power Automate &amp; Power Pages</li>
                         <li>SharePoint &amp; Action1</li>
@@ -133,7 +124,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3><i class="fa-solid fa-file-lines"></i> IT Operations &amp; Docs</h3>
+                    <h3><i class="fa-solid fa-file-lines" aria-hidden="true"></i> IT Operations &amp; Docs</h3>
                     <ul>
                         <li>IT documentation &amp; reporting</li>
                         <li>SQL &amp; Python</li>
@@ -160,8 +151,8 @@
                         <p class="cert-desc">Industry-standard certification validating baseline cybersecurity skills including threat management, cryptography, identity management, and network security.</p>
                         <div class="cert-footer">
                             <span class="cert-badge">Certified 2026 &middot; SY0-701</span>
-                            <a href="https://www.credly.com/earner/earned/badge/143e0c71-38b4-46cb-a45f-df083d28f721" target="_blank" rel="noopener noreferrer" class="cert-verify">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify
+                            <a href="https://www.credly.com/earner/earned/badge/143e0c71-38b4-46cb-a45f-df083d28f721" target="_blank" rel="noopener noreferrer" class="cert-verify" aria-label="Verify CompTIA Security+ certification">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Verify
                             </a>
                         </div>
                     </div>
@@ -177,8 +168,8 @@
                         <p class="cert-desc">Entry-level certification covering foundational security principles, network security, access controls, and incident response best practices.</p>
                         <div class="cert-footer">
                             <span class="cert-badge">Certified 2025</span>
-                            <a href="https://www.credly.com/earner/earned/badge/e6bf8bf5-14fe-4b1b-a3e9-3f9bf792b190" target="_blank" rel="noopener noreferrer" class="cert-verify">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify
+                            <a href="https://www.credly.com/earner/earned/badge/e6bf8bf5-14fe-4b1b-a3e9-3f9bf792b190" target="_blank" rel="noopener noreferrer" class="cert-verify" aria-label="Verify ISC2 Certified in Cybersecurity certification">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Verify
                             </a>
                         </div>
                     </div>
@@ -241,7 +232,7 @@
                             </div>
                             <div class="timeline-meta">
                                 <span class="timeline-date">Jun 2026 &ndash; Present</span>
-                                <span class="timeline-location"><i class="fa-solid fa-location-dot"></i> Providence, RI</span>
+                                <span class="timeline-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Providence, RI</span>
                             </div>
                         </div>
                         <ul>
@@ -263,7 +254,7 @@
                             </div>
                             <div class="timeline-meta">
                                 <span class="timeline-date">Feb 2026 &ndash; Aug 2026</span>
-                                <span class="timeline-location"><i class="fa-solid fa-location-dot"></i> Warwick, RI</span>
+                                <span class="timeline-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Warwick, RI</span>
                             </div>
                         </div>
                         <ul>
@@ -285,7 +276,7 @@
                             </div>
                             <div class="timeline-meta">
                                 <span class="timeline-date">Jan 2025 &ndash; Jun 2026</span>
-                                <span class="timeline-location"><i class="fa-solid fa-location-dot"></i> Providence, RI</span>
+                                <span class="timeline-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Providence, RI</span>
                             </div>
                         </div>
                         <ul>
@@ -298,13 +289,80 @@
             </div>
         </section>
 
-        <!--Blogs-->
-        <section id="blogs" class="blogs-section">
-            <h2>Blogs</h2>
-            <div class="text">
-                <h3>Coming soon</h3>
-                <p>I'll be sharing notes on cybersecurity, lessons from IT work, and write-ups from projects and CTF challenges. Check back for new posts.</p>
-            </div>
+        <!--Resume-->
+        <section id="resume" class="resume-section">
+            <h2>Resume</h2>
+            <img class="resume-preview" src="images/resume.png" width="1836" height="2376" alt="Prince Thapa's resume: education, certifications, technical skills, work experience, and projects detailed above. A readable text version follows this image." loading="lazy">
+            <p><a class="resume-download" href="Prince_Thapa_Resume.pdf" download="Prince_Thapa_Resume.pdf"><i class="fa-solid fa-download" aria-hidden="true"></i> Download PDF</a></p>
+<details class="resume-text"><summary>Read resume as text</summary><div class="resume-text-content"><h3>Prince Thapa</h3><p>Providence, RI &middot; <a href="mailto:thapapri000@gmail.com">thapapri000@gmail.com</a> &middot; <a href="tel:+14012889502">(401) 288-9502</a></p><h3>Education &amp; Certifications</h3><p>Johnson &amp; Wales University, Providence, RI<br>B.S. Cybersecurity &mdash; Expected graduation: 2027<br>CompTIA Security+ (SY0-701), 2026<br>ISC2 Certified in Cybersecurity (CC), 2025</p><h3>Technical Skills</h3>
+<h4> Networking &amp; Infrastructure</h4><ul>
+                        <li>TCP/IP, VLANs, subnetting</li>
+                        <li>Cisco routers &amp; switches</li>
+                        <li>Active Directory &amp; Group Policy</li>
+                        <li>Windows &amp; Linux (Fedora, Kali)</li>
+                    </ul>
+<h4> Security Tools</h4><ul>
+                        <li>Wireshark (packet analysis)</li>
+                        <li>Nmap &amp; Burp Suite</li>
+                        <li>Ghidra</li>
+                        <li>Packet &amp; phishing analysis</li>
+                    </ul>
+<h4> Incident Response / SOC</h4><ul>
+                        <li>AV, XDR &amp; security log monitoring</li>
+                        <li>Security alert investigation</li>
+                        <li>Access audits &amp; account lifecycle</li>
+                        <li>PCI DSS compliance support</li>
+                    </ul>
+<h4> Platforms &amp; Automation</h4><ul>
+                        <li>Power Apps, Power Automate &amp; Power Pages</li>
+                        <li>SharePoint &amp; Action1</li>
+                        <li>Virtual machines &amp; Docker</li>
+                        <li>Endpoint management</li>
+                    </ul>
+<h4> IT Operations &amp; Docs</h4><ul>
+                        <li>IT documentation &amp; reporting</li>
+                        <li>SQL &amp; Python</li>
+                        <li>Git version control</li>
+                        <li>Bash &amp; PowerShell</li>
+                    </ul>
+<h3>Experience</h3>
+<h4>IT Security Support Specialist</h4><p>Johnson &amp; Wales University &middot; Jun 2026 &ndash; Present</p><ul>
+                            <li>Monitor AV, XDR, and security logs daily to investigate alerts, suspicious activity, and potential security incidents</li>
+                            <li>Support PCI DSS compliance by maintaining compliance systems, updating security registers, and assisting with security controls</li>
+                            <li>Perform new-hire and separation access audits to identify inappropriate permissions and support secure account provisioning and deprovisioning</li>
+                            <li>Analyze and remediate phishing emails, support phishing simulations, and provide security awareness guidance</li>
+                        </ul>
+<h4>IT Intern</h4><p>DiLeonardo International &middot; Feb 2026 &ndash; Aug 2026</p><ul>
+                            <li>Administered Active Directory for approximately 70 users, managing accounts, password resets, security groups, OUs, and Group Policy</li>
+                            <li>Managed approximately 85 endpoints through Action1, automating updates, removals, and deployments for Revit, AutoCAD, and Bluebeam</li>
+                            <li>Built 3 internal solutions using Power Apps, Power Automate, Power Pages, Excel, and SharePoint for password management, onboarding, and office operations</li>
+                            <li>Configured application permissions and automated data workflows to reduce unnecessary sensitive-data exposure and improve IT processes</li>
+                        </ul>
+<h4>IT Communications Coordinator</h4><p>Johnson &amp; Wales University &middot; Jan 2025 &ndash; Jun 2026</p><ul>
+                            <li>Created and maintained technical documentation, user resources, and internal communications supporting university IT services</li>
+                            <li>Collaborated with multiple IT teams to communicate technology updates, troubleshoot user issues, and improve adoption of internal IT services</li>
+                        </ul>
+<h3>Projects</h3>
+
+                <h4>Polarity &mdash; AI Fact &amp; Bias Checker</h4>
+                <p><em>HackURI 2026 Winner</em></p>
+                <p>AI-powered web platform that evaluates news articles for credibility, misinformation, and potential bias.</p>
+                <ul>
+                    <li>Implemented Gemini AI agents to analyze article content, biased language patterns, and credibility indicators</li>
+                    <li>Collaborated with a team to design, build, and present a functional prototype during a 24-hour hackathon</li>
+                    <li>Won HackURI 2026</li>
+                </ul>
+
+
+                <h4>Rouge Island CTF 2026</h4>
+                <p><em>Hack The Box Competition</em></p>
+                <p>Collaborated with a team in a Capture the Flag competition hosted on Hack The Box.</p>
+                <ul>
+                    <li>Tackled hands-on cybersecurity challenges across hardware, web, software, cryptography, and infrastructure</li>
+                    <li>Applied security analysis and problem-solving techniques in a team competition</li>
+                </ul>
+
+</div></details>
         </section>
 
         <!--Section 6: Contact-->
@@ -324,21 +382,6 @@
         <p>&copy; 2026 Prince Thapa. All rights reserved.</p>
     </footer>
 
-    <script>
-        const sectionMenu = document.querySelector('.section-menu');
-        sectionMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => { sectionMenu.open = false; });
-        });
-        document.addEventListener('click', event => {
-            if (!sectionMenu.contains(event.target)) sectionMenu.open = false;
-        });
-        document.addEventListener('keydown', event => {
-            if (event.key === 'Escape' && sectionMenu.open) {
-                sectionMenu.open = false;
-                sectionMenu.querySelector('summary').focus();
-            }
-        });
-    </script>
  </body>
  </html>
 

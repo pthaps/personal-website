@@ -16,7 +16,7 @@
 
 :root {
   --text-color: #1a1c20;
-  --link-color: #4a76ee;
+  --link-color: #2853b8;
   --background-color: #eeeff1;
 
   --container-padding: 50px;
@@ -38,6 +38,8 @@ html {
 }
 
 body {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
   text-align: center;
   font-family: "Roboto Condensed", sans-serif;
   background-color: var(--background-color);
@@ -51,13 +53,43 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 20;
+  padding: 12px 16px;
+  background: #fff;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
 /* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 var(--container-padding);
-  height: 80px;
+  min-height: 80px;
+  height: auto;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 nav .left a {
@@ -66,84 +98,39 @@ nav .left a {
   font-weight: 600;
 }
 
-nav .right a {
-  color: var(--text-color);
-  margin: 0 10px;
+nav .right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 
-nav .right a:last-child {
+nav .right a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  color: var(--text-color);
+}
+
+nav .right a.resume-button {
+  font-size: 13px;
   color: var(--background-color);
   background-color: var(--text-color);
-  padding: 5px 15px;
+  padding: 5px 10px;
   border-radius: 5px;
+}
+
+.top-nav a:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
 }
 
 nav .right a span {
   margin-left: 5px;
-}
-
-/* Compact floating section menu. */
-.section-menu {
-  position: fixed;
-  right: 20px;
-  bottom: 24px;
-  z-index: 10;
-}
-
-.section-menu summary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  margin-left: auto;
-  list-style: none;
-  cursor: pointer;
-  color: #fff;
-  background: var(--text-color);
-  border-radius: 50%;
-  box-shadow: 0 4px 16px rgba(26, 28, 32, 0.18);
-}
-
-.section-menu summary::-webkit-details-marker {
-  display: none;
-}
-
-nav.section-nav {
-  position: absolute;
-  right: 0;
-  bottom: 58px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 4px;
-  width: 190px;
-  max-width: calc(100vw - 40px);
-  max-height: calc(100dvh - 110px);
-  overflow-y: auto;
-  height: auto;
-  padding: 10px;
-  background: #fff;
-  border: 1.5px solid #d3d3d3;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(26, 28, 32, 0.12);
-}
-
-.section-nav a {
-  padding: 8px 12px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.section-nav a:hover {
-  color: var(--text-color);
-}
-
-.section-nav a:focus-visible,
-.section-menu summary:focus-visible {
-  outline: 2px solid var(--link-color);
-  outline-offset: 4px;
-  border-radius: 2px;
 }
 
 main section[id] {
@@ -155,7 +142,7 @@ main section[id] {
 .skills-section,
 .certifications-section,
 .portfolio-section,
-.blogs-section,
+.resume-section,
 .contact-section {
   padding: 0 var(--container-padding);
   margin-bottom: var(--section-gap);
@@ -173,7 +160,7 @@ main section[id] {
   flex: 5;
 }
 
-.hero-section .text h2 {
+.hero-section .text h1 {
   font-size: 45px;
   margin-bottom: var(--content-gap);
 }
@@ -187,6 +174,7 @@ main section[id] {
 }
 
 .hero-section .text .links a {
+  min-height: 44px;
   display: inline-block;
   padding: 5px 10px;
   border: 2px solid var(--link-color);
@@ -214,7 +202,7 @@ main section[id] {
 .skills-section h2,
 .certifications-section h2,
 .portfolio-section h2,
-.blogs-section h2,
+.resume-section h2,
 .contact-section h2 {
   text-align: center;
   font-size: 35px;
@@ -223,8 +211,7 @@ main section[id] {
 
 /* SECTION TEXT */
 .skills-section .text,
-.portfolio-section .text,
-.blogs-section .text {
+.portfolio-section .text {
   text-align: center;
   margin-bottom: var(--content-gap);
 }
@@ -332,6 +319,7 @@ main section[id] {
 
 .certifications-section .cert-info {
   flex: 1;
+  min-width: 0;
 }
 
 .certifications-section .cert-info h3 {
@@ -373,6 +361,12 @@ main section[id] {
 }
 
 .certifications-section .cert-verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px;
+  text-decoration: underline;
   font-size: 13px;
   font-weight: 600;
   color: var(--link-color);
@@ -381,7 +375,7 @@ main section[id] {
 }
 
 .certifications-section .cert-verify:hover {
-  opacity: 0.75;
+  text-decoration-thickness: 2px;
 }
 
 /* SECTION 4: Portfolio */
@@ -393,15 +387,13 @@ main section[id] {
   text-align: left;
 }
 
-.portfolio-section h3,
-.blogs-section h3 {
+.portfolio-section h3 {
   margin-top: 18px;
   margin-bottom: 10px;
   line-height: 1.25;
 }
 
-.portfolio-section p,
-.blogs-section p {
+.portfolio-section p {
   line-height: 1.6;
   margin-bottom: 12px;
 }
@@ -417,7 +409,63 @@ main section[id] {
   line-height: 1.5;
 }
 
+.resume-preview {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background: #fff;
+}
+
 /* SECTION 5: Contact */
+.resume-text {
+  max-width: 900px;
+  margin: 20px auto 0;
+  text-align: left;
+}
+
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-top: 12px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  background: var(--text-color);
+  color: #fff;
+  font-size: 13px;
+}
+
+.resume-text summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px;
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.resume-text-content {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+}
+
+.resume-text-content h3,
+.resume-text-content h4,
+.resume-text-content p,
+.resume-text-content ul {
+  margin-bottom: 12px;
+}
+
+.resume-text-content ul { padding-left: 20px; }
+.resume-text-content a { text-decoration: underline; }
+
 .email-button {
   display: inline-block;
   margin-top: 20px;
@@ -590,7 +638,7 @@ main section[id] {
 
 .experience-section .timeline-location {
   font-size: 13px;
-  color: #888;
+  color: #666;
 }
 
 .experience-section .timeline-location i {
@@ -615,19 +663,29 @@ footer {
   text-align: center;
   padding: 20px var(--container-padding);
   font-size: 14px;
-  color: #888;
+  color: #666;
   border-top: 1px solid #d3d3d3;
 }
 
 /* Responsive */
 @media (max-width: 850px) {
-  .hero-section .text h2 {
+  .top-nav {
+    height: auto;
+    min-height: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .hero-section .text h1 {
     font-size: 35px;
   }
 }
 
 @media (max-width: 740px) {
-  .hero-section .text h2 {
+  .hero-section .text h1 {
     font-size: 35px;
   }
 
@@ -646,6 +704,10 @@ footer {
 
   .certifications-section .cert-card {
     max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .skills-section .skill-groups {
@@ -654,6 +716,7 @@ footer {
   }
 
   .skills-section .skill-group {
+    min-width: 0;
     max-width: 100%;
     width: 100%;
   }
@@ -678,13 +741,7 @@ footer {
     padding: 0 var(--container-padding);
   }
 
-  nav .right a:last-child {
-    color: var(--text-color);
-    background-color: transparent;
-    padding: 0;
-  }
-
-  nav .right a span {
+  nav .right a:not(.resume-button) span {
     display: none;
   }
 
@@ -703,7 +760,7 @@ footer {
     display: none;
   }
 
-  .hero-section .text h2 {
+  .hero-section .text h1 {
     font-size: 30px;
   }
 
@@ -732,6 +789,17 @@ footer {
 
   .contact-section .group .text {
     width: 100%;
+  }
+
+  .experience-section .timeline {
+    padding-left: 22px;
+  }
+
+  .experience-section .timeline-dot { left: -19px; }
+
+  .experience-section .timeline-content {
+    padding: 16px;
+    min-width: 0;
   }
 
   .contact-section .group form {
